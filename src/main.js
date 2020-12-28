@@ -5,10 +5,13 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import 'lib-flexible'
-import { ToastPlugin } from 'vux'
+import { ToastPlugin, LoadingPlugin, ConfirmPlugin } from 'vux'
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
+
+Vue.use(LoadingPlugin)
 Vue.use(ToastPlugin)
+Vue.use(ConfirmPlugin)
 
 // 默认参数
 Vue.use(ToastPlugin, {position: 'middle'})

@@ -4,6 +4,7 @@ import 'font-awesome/css/font-awesome.css'
 import HelloWorld from '@/pages/HelloWorld/HelloWorld'
 import login from '@/pages/login/login'
 import home from '@/pages/home/home'
+import setUp from '@/pages/setUp/setUp'
 import productDdetails from '@/pages/product-details/product-details'
 
 Vue.use(Router)
@@ -19,6 +20,10 @@ export default new Router({
       path: '/',
       name: 'home',
       component: home
+    }, {
+      path: '/setUp',
+      name: 'setUp',
+      component: setUp
     }, {
       path: '/login',
       name: 'login',

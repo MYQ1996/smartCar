@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <div class="head">
+    <!-- <div class="head">
       <img class="logo" src="./images/logo.png" alt="" srcset="">
-    </div>
+    </div> -->
 
-    <div class="car">
+    <!-- <div class="car">
         <div class="carInfos">
           <img class="carImg" src="./images/car.png" alt="" srcset="">
           <div class="carTitle">{{carName}}</div>
@@ -22,9 +22,9 @@
         </div>
 
       </div>
-    </div>
+    </div> -->
 
-    <div class="operatingbk">
+    <!-- <div class="operatingbk">
       <div class="operating">
         <div class="operatingTitle">
           <span class="operatingStatus">{{stateTitle}}</span>
@@ -43,13 +43,13 @@
         </div>
 
       </div>
-    </div>
+    </div> -->
 
-    <div class="rang-data">
+    <!-- <div class="rang-data">
       <range v-if="state" v-model="data1" @on-touchend="onChange"></range>
-    </div>
+    </div> -->
 
-    <div class="imgWindow" v-if=imgshow>
+    <!-- <div class="imgWindow" v-if=imgshow>
       <div class="zhezhao" id="zhezhao">
         <div class="login" id="login">
             <div class="content">
@@ -83,12 +83,12 @@
 
             </div>
 
-            <!-- <div class="shut" @click="close"></div> -->
+            <div class="shut" @click="close"></div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <!-- <ptFooter :menu="menu"></ptFooter> -->
+    <ptFooter :menu="menu"></ptFooter>
 
   </div>
 </template>
@@ -112,12 +112,12 @@ export default {
         title: '首页',
         icon: 'fa fa-home',
         url: '/',
-        color: '#01AAED'
+        color: '#2F4056'
       }, {
         title: '设置',
         icon: 'fa fa-user',
         url: '/setUp',
-        color: '#2F4056'
+        color: '#01AAED'
       }],
       title: '首页',
       stateTitle: '等待启动',
@@ -211,10 +211,10 @@ export default {
     queryCar () {
       const _this = this
       this.$vux.confirm.prompt('123', {
-        title: '输入ip网段 例子:192.168.1',
+        title: '输入ip网段 例子:192.168.4',
         onShow () {
           console.log('promt show')
-          _this.$vux.confirm.setInputValue('192.168.1')
+          _this.$vux.confirm.setInputValue('192.168.4')
         },
         onHide () {
           console.log('prompt hide')
@@ -236,7 +236,10 @@ export default {
               text: ''
             })
             dataLinkPostJson(findFrontInforListInterface, a, (res) => {
-              _this.toastAlert(index)
+              // _this.toastAlert(index)
+              console.log('====================================')
+              console.log(index)
+              console.log('====================================')
               _this.$vux.loading.hide()
             }, () => {
             })
@@ -250,4 +253,4 @@ export default {
   }
 }
 </script>
-<style src='./home.css'></style>
+<style src='./setUp.css'></style>

@@ -4,7 +4,7 @@
 // import Vue from 'vue'
 // import axios from 'axios'
 import $ from 'jquery'
-function dataLinkPostJson (url, val, caozuo) {
+function dataLinkPostJson (url, val, caozuo, shu) {
   $.ajax({
     type: 'POST',
     data: val,
@@ -14,7 +14,8 @@ function dataLinkPostJson (url, val, caozuo) {
     success: function (data) {
       caozuo(data)
     },
-    error: function () {
+    error: function (res) {
+      shu(res)
       console.log(url + '  ajax交互失败！')
     }
   })
